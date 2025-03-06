@@ -85,7 +85,7 @@ const Sidebar = () => {
           <div className="w-full mb-6">
             <div className="flex items-center gap-3 mb-3">
               <MapPin size={20} className="text-white" />
-              <span>Maple, Ontario</span>
+              <span>Vaughan, Ontario</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail size={20} className="text-white" />
