@@ -69,7 +69,7 @@ const Sidebar = () => {
           {/* Profile Picture */}
           <div className="mb-4">
             <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-gray-700">
-              <img src="https://github.com/MansoorAZafar/portfolio/blob/main/public/iconpfp%20(1).png" alt="Profile" className="w-full h-full object-cover" />
+              <img src="https://github.com/MansoorAZafar/portfolio/blob/main/public/iconpfp%20(1).png?raw=true" alt="Profile" className="w-full h-full object-cover" />
             </div>
           </div>
 
