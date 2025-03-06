@@ -48,7 +48,7 @@ const Intro = () => {
                 height={350}
                 alt="Profile Picture"
                 className="object-cover"
-                src="/iconpfp (1).png"
+                src="https://github.com/MansoorAZafar/portfolio/blob/main/public/iconpfp%20(1).png"
               />
             </div>
           </div>
