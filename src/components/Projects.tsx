@@ -68,7 +68,7 @@ const projects = [
       "My first ever comparatively big application in Java, a 2D game made with just Java",
     image: "https://github.com/user-attachments/assets/5aa2f502-2bb6-4caa-bac8-ffd6796f5257?height=200&width=400",
     github: "https://github.com/MansoorAZafar/java/tree/main/Game",
-    tags: ["JavaScript", "OpenWeatherAPI", "Leaflet.js"],
+    tags: ["Java", "Java Swing"],
   },
 ]
 
