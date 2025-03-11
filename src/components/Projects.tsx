@@ -70,6 +70,24 @@ const projects = [
     github: "https://github.com/MansoorAZafar/java/tree/main/Game",
     tags: ["Java", "Java Swing"],
   },
+  {
+    id: 8,
+    title: "Tax Filing Management Application",
+    description:
+      "A tax filing management application made with Android Studio and Java. Customers & Admins can login and register, and admins can manage customers.",
+    image: "https://github.com/user-attachments/assets/54b7a148-f869-4161-8bd4-cc38e6811e9e",
+    github: "https://github.com/MansoorAZafar/Seneca-College-BSD/blob/master/DPS924%20Mobile%20App%20Development%20-%20Android/A4_mansoor_zafar",
+    tags: ["Java", "Android Studio", "RoomDB"],
+  },
+  {
+    id: 9,
+    title: "Cooking Instrucional App",
+    description:
+      "A cooking instructions app where users can view and cook specific foods from the app. Made via Android Studio and Java",
+    image: "https://github.com/user-attachments/assets/ff74547a-abf8-4ceb-8518-c47cda13c57b",
+    github: "https://github.com/MansoorAZafar/Seneca-College-BSD/tree/master/DPS924%20Mobile%20App%20Development%20-%20Android/A2_mansoor_zafar2",
+    tags: ["Java", "Android Studio"],
+  },
 ]
 
 export default function Projects() {
