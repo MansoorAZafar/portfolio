@@ -21,14 +21,13 @@ const Intro = () => {
             </div>
             <div className="space-y-4 text-white/70">
               <p>
-              I&apos;m {new Date().getFullYear() - birthYear} years old and 
-              an aspiring Software Developer with a strong passion for building, testing 
-              programs and want to make games. While I particularly enjoy backend 
-              development, working with languages like Java, C# and upcoming GO, I plan on
-              experimenting with more obscure languages for backend like C++ with Drogon. 
-              From designing robust systems, testing applications, full stack development to exploring the creative side of game development, 
-              I thrive in environments that allow me to explore a range of 
-              technologies and build impactful solutions.
+                I&apos;m {new Date().getFullYear() - birthYear} years old and passionate 
+                about programming, game development, and cloud technologies. 
+                I especially enjoy backend development and working with languages like Java, 
+                C#, and Python, while also exploring new tools and frameworks to expand my 
+                skills. Whether it&apos;s building scalable systems, experimenting with game 
+                mechanics, or deploying applications to the cloud, I thrive in environments 
+                that encourage creativity, learning, and building impactful solutions.
               </p>
             </div>
             <div className="flex flex-col gap-10 min-[400px]:flex-row">

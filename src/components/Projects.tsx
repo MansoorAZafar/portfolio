@@ -1,104 +1,34 @@
+ 
 "use client"
 
 import { useState } from "react"
 import { ArrowLeft, ArrowRight, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 
 // Sample project data
-const projects = [
-  {
-    id: 1,
-    title: "Card Clash",
-    description:
-      "A simple unity game integrated into a simple Blazor application with a .NET Web Core API as the backend with a PostgreSQL database.",
-    image: "https://github.com/user-attachments/assets/87beddb0-5d35-4ee0-9fb5-b4d34b864ac8?height=200&width=400",
-    github: "https://github.com/MansoorAZafar/CardClash",
-    tags: ["Blazor", ".NET Core Web API", "NeonDB", "Unity"],
-  },
-  {
-    id: 2,
-    title: "Mini Quest",
-    description:
-      "A web-based rouge-like 2D short game with authentication and authorization. Built with: NextJs, NodeJs, ExpressJS, MongoDB.",
-    image: "https://raw.githubusercontent.com/MansoorAZafar/FullStack-React-Game/main/Frontend/public/Logo%20(1).png?height=200&width=400",
-    github: "https://github.com/MansoorAZafar/FullStack-React-Game",
-    tags: ["NextJS", "Express", "NodeJS", "MongoDB"],
-  },
-  {
-    id: 3,
-    title: "CSharp Academy",
-    description:
-      "All the projects I've done from the C# Academy",
-    image: "https://thecsharpacademy.com/img/logo.png?height=200&width=400",
-    github: "https://github.com/MansoorAZafar/CSharp-Academy",
-    tags: ["C#", "ASP.NET", ".NET Web API", "EF Core", "MS SQL", "SQLite", "Spectre.Console", "Web Scraping", "EPPlus", "MSTest", "and more!"],
-  },
-  {
-    id: 4,
-    title: "Assembly Line",
-    description:
-      "A simulation of an assembly line with a number of stations. All done in C++.",
-    image: "https://github.com/user-attachments/assets/e35c7800-dcff-4788-ab29-e0d84b847b9a?height=200&width=400",
-    github: "https://github.com/MansoorAZafar/Seneca-College-BSD/tree/master/btp305%20-%20object-oriented%20software%20development%20using%20C%2B%2B/ms3",
-    tags: ["C++"],
-  },
-  {
-    id: 5,
-    title: "Lego Collection",
-    description:
-      "A NodeJS application to show, update, create and delete lego sets. Built with: NodeJS and NeonDB ",
-    image: "https://github.com/user-attachments/assets/e463fe5b-7f01-4c25-9502-82b6a2123ba6?height=200&width=400",
-    github: "https://github.com/MansoorAZafar/Seneca-College-BSD/tree/master/BTI325%20-%20Web%20Programming%20Tools%20and%20Frameworks/Assignment%202",
-    tags: ["NodeJS", "NeonDB"],
-  },
-  {
-    id: 6,
-    title: "Django Parking Simulator API",
-    description:
-      "A backend API for accessing and  managing parking spots and logging in. Provides parking spots, reserving a spot, and content management.",
-    image: "https://github.com/MansoorAZafar/Django-Flask-Parking-Application/assets/164381371/1fa7033a-8f41-4709-8d9d-d438213c2cb3?height=200&width=400",
-    github: "https://github.com/username/social-dashboardhttps://github.com/MansoorAZafar/Django-Flask-Parking-Application/tree/main/Backend",
-    tags: ["Django", "Python", "Docker", "Sql Server"],
-  },
-  {
-    id: 7,
-    title: "Java 2D Dungeon Crawler (ish) Game",
-    description:
-      "My first ever comparatively big application in Java, a 2D game made with just Java",
-    image: "https://github.com/user-attachments/assets/5aa2f502-2bb6-4caa-bac8-ffd6796f5257?height=200&width=400",
-    github: "https://github.com/MansoorAZafar/java/tree/main/Game",
-    tags: ["Java", "Java Swing"],
-  },
-  {
-    id: 8,
-    title: "Tax Filing Management Application",
-    description:
-      "A tax filing management application made with Android Studio and Java. Customers & Admins can login and register, and admins can manage customers.",
-    image: "https://github.com/user-attachments/assets/54b7a148-f869-4161-8bd4-cc38e6811e9e",
-    github: "https://github.com/MansoorAZafar/Seneca-College-BSD/blob/master/DPS924%20Mobile%20App%20Development%20-%20Android/A4_mansoor_zafar",
-    tags: ["Java", "Android Studio", "RoomDB"],
-  },
-  {
-    id: 9,
-    title: "Cooking Instrucional App",
-    description:
-      "A cooking instructions app where users can view and cook specific foods from the app. Made via Android Studio and Java",
-    image: "https://github.com/user-attachments/assets/ff74547a-abf8-4ceb-8518-c47cda13c57b",
-    github: "https://github.com/MansoorAZafar/Seneca-College-BSD/tree/master/DPS924%20Mobile%20App%20Development%20-%20Android/A2_mansoor_zafar2",
-    tags: ["Java", "Android Studio"],
-  },
-]
+import projectsList from "../data/Programming-Projects.json";
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  github: string;
+  tags: string[];
+};
 
 export default function Projects() {
   const [currentPage, setCurrentPage] = useState(1)
-  const projectsPerPage = 5
-  const totalPages = Math.ceil(projects.length / projectsPerPage)
-
+  const projectsPerPage: number = 6;
+  const projectsLength: number = Object.keys(projectsList.projects).length;
+  const totalPages: number = Math.ceil(projectsLength / projectsPerPage)
   // Get current projects
   const indexOfLastProject = currentPage * projectsPerPage
   const indexOfFirstProject = indexOfLastProject - projectsPerPage
-  const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject)
+
+  const projects: Project[] = Object.values(projectsList.projects);
+  const currentProjects: Project[] = projects.slice(indexOfFirstProject, indexOfLastProject)
 
   // Change page
   const nextPage = () => {
@@ -123,42 +53,65 @@ export default function Projects() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
           {currentProjects.map((project) => (
-            <Card key={project.id} className="overflow-hidden bg-gray-800/50 text-white border border-gray-700">
+            <Card
+              key={project.id}
+              className="flex flex-col overflow-hidden bg-gray-800/50 text-white border border-gray-700"
+            >
+              {/* Image */}
               <div className="aspect-video w-full overflow-hidden">
-                <img
+                <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="h-full w-full object-cover transition-all hover:scale-105"
+                  width={400}
+                  height={200}
+                  className="h-full w-full object-cover transition-transform hover:scale-105"
                 />
               </div>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="inline-flex items-center rounded-full bg-indigo-500/20 px-2.5 py-0.5 text-xs font-medium text-indigo-200"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-300">{project.description}</CardDescription>
-              </CardContent>
-              <CardFooter>
-                <Button asChild variant="outline" className="w-full border-gray-600 text-white hover:bg-gray-700">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center"
+
+              {/* Content Area */}
+              <div className="flex flex-col flex-1 p-4 space-y-4">
+                {/* Header */}
+                <CardHeader className="p-0 space-y-2">
+                  <CardTitle className="text-lg font-semibold leading-tight">
+                    {project.title}
+                  </CardTitle>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="inline-flex items-center rounded-full bg-indigo-500/20 px-2.5 py-0.5 text-xs font-medium text-indigo-200"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </CardHeader>
+
+                {/* Description */}
+                <CardContent className="p-0 flex-1">
+                  <CardDescription className="text-sm text-gray-300 leading-snug line-clamp-3">
+                    {project.description}
+                  </CardDescription>
+                </CardContent>
+
+                {/* Footer Button */}
+                <CardFooter className="p-0">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-gray-600 text-white hover:bg-gray-700"
                   >
-                    <Github className="mr-2 h-4 w-4" /> View on GitHub
-                  </a>
-                </Button>
-              </CardFooter>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center"
+                    >
+                      <Github className="mr-2 h-4 w-4" /> View on GitHub
+                    </a>
+                  </Button>
+                </CardFooter>
+              </div>
             </Card>
           ))}
         </div>
