@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from "react"
 import { Mail, MapPin, Github, Linkedin, User, ChevronLeft, ChevronRight } from "lucide-react"
-import { SiCplusplus, SiC, SiPython, SiJavascript } from "react-icons/si";
+import { SiCplusplus, SiC, SiPython, SiJavascript, SiDart, SiFirebase, SiGooglecloud, SiSupabase } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
 
 import { SiSpringboot, SiDotnet, SiDjango, SiFlask, SiReact, SiNextdotjs, 
   SiAmazon, SiDocker, SiBlazor, SiSpring, 
-  SiGit, SiGithub, SiExpress, SiCircleci, SiPostman } from "react-icons/si";
-
+  SiGit, SiGithub, SiCircleci, SiPostman, } from "react-icons/si";
+import { FaFlutter } from "react-icons/fa6";
 
 
 const Sidebar = () => {
@@ -137,6 +137,10 @@ const Sidebar = () => {
                 <SiJavascript size={24} className="text-yellow-400" />
                 <span>JavaScript</span>
               </div>
+              <div className="flex items-center gap-2">
+                <SiDart size={24} className="text-yellow-400" />
+                <span>Dart</span>
+              </div>
             </div>
           </div>
 
@@ -176,8 +180,8 @@ const Sidebar = () => {
                 <span>Next.js</span>
               </div>
               <div className="flex items-center gap-2">
-                <SiExpress size={24} className="text-black" />
-                <span>Express.js</span>
+                <FaFlutter size={24} className="text-black" />
+                <span>Flutter</span>
               </div>
               <div className="flex items-center gap-2">
                 <SiBlazor size={24} className="text-black" />
@@ -201,6 +205,18 @@ const Sidebar = () => {
               <div className="flex items-center gap-2">
                 <SiDocker size={24} className="text-blue-600" />
                 <span>Docker</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <SiFirebase size={24} className="text-blue-600" />
+                <span>Firebase</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <SiGooglecloud size={24} className="text-blue-600" />
+                <span>GCP</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <SiSupabase size={24} className="text-blue-600" />
+                <span>Supabase</span>
               </div>
             </div>
           </div>
