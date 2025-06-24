@@ -13,8 +13,8 @@ export default function Contact() {
         <div className="w-full mt-10 space-y-6">
           <div className="flex items-center justify-center space-x-4">
             <Mail className="h-7 w-7 text-indigo-400" />
-            <a href="mailto:mansoorahmadzafarwork@gmail.com" className="text-xl hover:underline hover:text-indigo-300 transition">
-            mansoorahmadzafarwork@gmail.com
+            <a href="mailto:mansoorwork980@gmail.com" className="text-xl hover:underline hover:text-indigo-300 transition">
+            mansoorwork980@gmail.com
             </a>
           </div>
         </div>
