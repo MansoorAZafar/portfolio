@@ -89,8 +89,8 @@ const Sidebar = () => {
             </div>
             <div className="flex items-center gap-3">
               <Mail size={20} className="text-white" />
-              <a href="mailto:mansoorahmadzafarwork@gmail.com" className="text-[#3b82f6]">
-                mansoorahmadzafarwork@gmail.com
+              <a href="mailto:mansoorwork980@gmail.com" className="text-[#3b82f6]">
+                mansoorwork980@gmail.com
               </a>
             </div>
           </div>
